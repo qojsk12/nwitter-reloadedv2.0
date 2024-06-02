@@ -1,5 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout";
+import Home from "./routes/home";
+import Profile from "./routes/profile";
 
 const router = createBrowserRouter([
   {
@@ -7,14 +9,23 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path:
-      }
-    ]
-  }
-])
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
